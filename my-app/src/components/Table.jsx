@@ -14,10 +14,12 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import EditIcon from "@mui/icons-material/Edit";
 
-export default function UsersTable({ utilisateurs, booleanFunction, InfoUser }) {
+export default function UsersTable({ utilisateurs, InfoUser ,IndexUser , boolEdit ,getIndex}) {
   const handleView = (userName, index) => {
     InfoUser(index, userName);
   };
+
+
 
   return (
     <Container maxWidth="xl">
@@ -46,12 +48,17 @@ export default function UsersTable({ utilisateurs, booleanFunction, InfoUser }) 
                   <IconButton 
                     aria-label="edit" 
                     color="secondary"
+                    onClick={()=>{
+                      boolEdit(true);
+                      getIndex(index);
+                    }}
                   >
                     <EditIcon />
                   </IconButton>
                   <IconButton 
                     aria-label="delete" 
                     color="error"
+                    onClick={()=>{IndexUser(index)}}
                   >
                     <DeleteIcon />
                   </IconButton>

@@ -17,6 +17,7 @@ import { useState } from "react";
 
 
 export default function StaticUI({getuser}) {
+
   const [valueInput, setValueInput] = useState(null);
 
   return (
